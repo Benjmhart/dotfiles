@@ -18,6 +18,17 @@
       },
       {
         "id": 2,
+        "color": [150, 255, 150],
+        "actions": [
+          { "macro": "copy" },
+          { "macro": "openLine" },
+          { "typeString": "console.log('" },
+          { "macro": "paste" },
+          { "typeString": "')" }
+        ]
+      },
+      {
+        "id": 3,
         "color": [150, 150, 255],
         "actions": [
           { "macro": "copy" },
@@ -30,7 +41,7 @@
         ]
       },
       {
-        "id": 3,
+        "id": 4,
         "color": [255, 150, 0],
         "actions": [{ "folderLink": "fldr1" }]
       }
