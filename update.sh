@@ -6,7 +6,7 @@ set -o nounset
 main() {
     echo "updating files that can't be linked"
     rm -rf ./bin
-    cp ~/bin ./
+    cp -r ~/bin ./
     
 }
 
