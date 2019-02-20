@@ -22,6 +22,15 @@ main() {
     cp ./bin/sudovim ~/bin
     cp ./bin/title ~/bin
 
+    if [[ ! -d "~/.screenlayout" ]] 
+      then
+        mkdir "~/.screenlayout"
+    fi
+
+    cp ./.screenlayout/single.sh ~/.screenlayout
+    cp ./.screenlayout/triplethreat.sh ~/.screenlayout
+    cp ./.screenlayout/wide.sh ~/.screenlayout
+
     echo "dotfile installation complete"
 }
 
