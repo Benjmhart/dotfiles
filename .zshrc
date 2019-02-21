@@ -4,7 +4,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:
 
 
 # GOPATH
-export GOPATH=~/projects/go
+export GOPATH=~/Projects/go
 
 source "$HOME/.nvm/nvm.sh"
 # Path to your oh-my-zsh installation.
@@ -27,7 +27,7 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -45,7 +45,7 @@ DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -97,10 +97,26 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+# AutoResolve Aliases
+expand-aliases() {
+  unset 'functions[_expand-aliases]'
+  functions[_expand-aliases]=$BUFFER
+  (($+functions[_expand-aliases])) &&
+    BUFFER="${functions[_expand-aliases]#$'\t'}" &&
+    CURSOR=$#BUFFER
+}
+
+zle -N expand-aliases
+bindkey '^ ' expand-aliases
+
 # Example aliases
 alias zshrc="sudo gedit ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cd..="cd .."
 alias setmon3="/home/bhart/.screenlayout/tripleThreat.sh"
 alias setmon1="/home/bhart/.screenlayout/single.sh"
 alias setmonwide="/home/bhart/.screenlayout/wide.sh"
+alias projects="cd ~/Projects"
+alias exerbash="cd ~/exercism/bash"
+alias exerhask="cd ~/exercism/haskell"
+alias reload="source ~/.zshrc"
+alias dotfiles="cd ~/dotfiles"
