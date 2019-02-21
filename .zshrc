@@ -68,7 +68,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast command-not-found compleat npm cabal sudo vscode)
+plugins=(gitfast command-not-found compleat npm cabal sudo vscode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
