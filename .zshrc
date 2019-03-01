@@ -120,3 +120,4 @@ alias exerbash="cd ~/exercism/bash"
 alias exerhask="cd ~/exercism/haskell"
 alias reload="source ~/.zshrc"
 alias dotfiles="cd ~/dotfiles"
+eval $(thefuck --alias)
