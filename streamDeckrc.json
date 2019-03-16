@@ -44,6 +44,17 @@
         "id": 4,
         "color": [255, 150, 0],
         "actions": [{ "folderLink": "fldr1" }]
+      },
+      {
+        "id": 5,
+        "color": [0, 0, 255],
+        "actions": [
+          { "macro": "copy" },
+          { "macro": "openLine" },
+          { "typeString": "console.log('" },
+          { "macro": "paste" },
+          { "typeString": "')" }
+        ]
       }
     ],
     "fldr1": [
