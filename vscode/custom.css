@@ -1,0 +1,24 @@
+
+
+/* sidebar title */
+.monaco-workbench .sidebar>.title>.title-label h2 {
+  font-size: 1rem;
+}
+
+
+ /* file names in editor */
+.monaco-icon-label>.monaco-icon-label-description-container>.label-name {
+  font-size: 1.2rem;
+}
+
+/* window title */
+.monaco-workbench.linux .part.titlebar>.window-title {
+  font-size: 1.2rem;
+}
+
+/* tab title */
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-label a, .monaco-workbench .part.editor>.content .editor-group-container>.title .title-label a {
+
+  font-size: 1.2rem;
+}
