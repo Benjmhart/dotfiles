@@ -31,6 +31,13 @@ main() {
     cp ./.screenlayout/triplethreat.sh ~/.screenlayout
     cp ./.screenlayout/wide.sh ~/.screenlayout
 
+    if [[ ! -d "~/.config/Code/User" ]] 
+      then
+        mkdir "~/.config/Code/User"
+    fi
+
+    cp ./vscode/* ./.config/Code/User/
+
     echo "dotfile installation complete"
 }
 
