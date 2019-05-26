@@ -14,29 +14,39 @@ main() {
     cp ./.gitignore ~/
     cp ./.ghci ~/
     
-    if [[ ! -d "~/bin" ]] 
+    if [[ ! -d ~/bin ]] 
       then
-        mkdir "~/bin"
+        mkdir ~/bin
     fi
 
-    cp ./bin/sudovim ~/bin
+    cp ./bin/sudonvm ~/bin
     cp ./bin/title ~/bin
 
-    if [[ ! -d "~/.screenlayout" ]] 
+    if [[ ! -d ~/.screenlayout ]] 
       then
-        mkdir "~/.screenlayout"
+        mkdir ~/.screenlayout
     fi
 
     cp ./.screenlayout/single.sh ~/.screenlayout
-    cp ./.screenlayout/triplethreat.sh ~/.screenlayout
+    cp ./.screenlayout/tripleThreat.sh ~/.screenlayout
     cp ./.screenlayout/wide.sh ~/.screenlayout
 
-    if [[ ! -d "~/.config/Code/User" ]] 
+    if [[ ! -d ~/.config ]]
       then
-        mkdir "~/.config/Code/User"
+        mkdir ~/.config
     fi
 
-    cp ./vscode/* ./.config/Code/User/
+    if [[ ! -d ~/.config/Code ]]
+      then 
+        mkdir ~/.config/Code
+    fi
+
+    if [[ ! -d ~/.config/Code/User ]] 
+      then
+        mkdir ~/.config/Code/User
+    fi
+
+    cp ./vscode/* ~/.config/Code/User
 
     echo "dotfile installation complete"
 }
