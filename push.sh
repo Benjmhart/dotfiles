@@ -7,7 +7,8 @@ main() {
     DATE=`date +%Y-%m-%d`
     echo "cron task started $DATE" > ~/Desktop/cronLog.txt
     cp ~/Passwords.kdbx ~/dotfiles
-    cp -r ~/.config/Code/User/* ~/dotfiles/vscode
+    cp -r ~/.config/Code/User/settings.json ~/dotfiles/vscode
+    cp -r ~/.config/Code/User/keybindings.json ~/dotfiles/vscode
     cp ~/.ghci ~/dotfiles
     cp ~/.vimrc ~/dotfiles
     cp ~/.zshrc ~/dotfiles
