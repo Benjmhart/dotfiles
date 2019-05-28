@@ -12,6 +12,9 @@ main() {
     cp ~/.vimrc ~/dotfiles
     cp ~/.zshrc ~/dotfiles
     cp ~/streamDeckrc.json ~/dotfiles
+    cp ~/.prettierrc ~/dotfiles
+    cp ~/.jsbeautifyrc ~/dotfiles
+    cp ~/.hyper.js ~/dotfiles
 
     ( cd ~/dotfiles && git add . && git commit -m $DATE && git push origin master )
     echo "TASK COMPLETE"
