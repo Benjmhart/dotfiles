@@ -1,1 +1,58 @@
-./settings.json
+{
+  "explorer.confirmDragAndDrop": false,
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "html.format.enable": false,
+  "html.format.indentInnerHtml": true,
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "prettier.printWidth": 140,
+  "window.zoomLevel": -2,
+  "editor.fontLigatures": true,
+  "editor.suggestSelection": "recentlyUsed",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "terminal.integrated.fontSize": 22,
+  "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+  "explorer.confirmDelete": false,
+  "prettier.bracketSpacing": true,
+  "beautify.language": {
+    "css": ["css", "scss"],
+    "html": ["htm", "html"]
+  },
+  "files.associations": {
+    "**/components/*.js": "javascriptreact",
+    "**/components/*/*.js": "javascriptreact",
+    "**/components/*/*/*.js": "javascriptreact",
+    "**/components/*/*/*/*.js": "javascriptreact",
+    "**/components/*/*/*/*/*.js": "javascriptreact",
+    "**/flcms/app/components/*.js": "javascript",
+    "**/flcms/app/components/*/*.js": "javascript",
+    "**/flcms/app/components/*/*/*.js": "javascript",
+    "**/flcms/app/components/*/*/*/*.js": "javascript",
+    "**/flcms/app/components/*/*/*/*/*.js": "javascript"
+  },
+  "workbench.colorTheme": "Cold Snack",
+  "window.menuBarVisibility": "toggle",
+  "editor.fontSize": 24,
+  "editor.wordWrap": "on",
+  "editor.renderWhitespace": "all",
+  "sync.gist": "d5e808049a15ac6de418ad3eb12e9deb",
+  "window.titleBarStyle": "custom",
+  "terminal.integrated.cursorBlinking": true,
+  "workbench.activityBar.visible": false,
+  "workbench.tree.indent": 8,
+  "workbench.statusBar.feedback.visible": false,
+  "vscode_custom_css.imports": ["file:///home/bhart/dotfiles/vscode/custom.css"],
+  "vscode_custom_css.policy": true,
+  "languageServerHaskell.maxNumberOfProblems": 5,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
