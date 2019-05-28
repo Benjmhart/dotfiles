@@ -11,6 +11,7 @@ main() {
     cp ~/.ghci ~/dotfiles
     cp ~/.vimrc ~/dotfiles
     cp ~/.zshrc ~/dotfiles
+    cp ~/streamDeckrc.json ~/dotfiles
 
     ( cd ~/dotfiles && git add . && git commit -m $DATE && git push origin master )
     echo "TASK COMPLETE"
