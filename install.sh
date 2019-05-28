@@ -46,7 +46,7 @@ main() {
         mkdir ~/.config/Code/User
     fi
 
-    cp ./vscode/* ~/.config/Code/User
+    cp -r ./vscode/* ~/.config/Code/User
 
     echo "dotfile installation complete"
 }
