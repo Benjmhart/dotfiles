@@ -21,7 +21,7 @@ main() {
     cp ~/.jsbeautifyrc ~/dotfiles
     cp ~/.hyper.js ~/dotfiles
 
-    (cd ~/secrets && git add . && git commit -m $DATE && git push origin master)
+    ( cd ~/secrets && git add . && git commit -m $DATE && git push origin master )
 
     ( cd ~/dotfiles && git add . && git commit -m $DATE && git push origin master )
     
