@@ -104,5 +104,6 @@
       "name": "Vue Green",
       "value": "#42b883"
     }
-  ]
+  ],
+  "terminal.integrated.rendererType": "dom"
 }
