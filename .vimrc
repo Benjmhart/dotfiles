@@ -1,1 +1,2 @@
 set nocp
+set number

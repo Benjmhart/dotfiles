@@ -28,7 +28,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 #set up github & bitbucket
 ssh-keygen
-cat ./.ssh/id_rsa.pub
+cat ~/.ssh/id_rsa.pub
 
 # (copy and paste this into github)
 # clone down dotfiles and secrets
@@ -89,7 +89,7 @@ sudo apt install bats
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 source ~/.zshrc
 nvm install --lts
-npm install -g spago purescript grunt 
+npm install -g spago purescript grunt bower
 
 #cronjob
 crontab -e

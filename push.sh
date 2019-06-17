@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-set -o errexit
-set -o nounset
+
 
 
 # this is intended as a cron job that runs updates automatically for dotfiles and for a secrets repo
