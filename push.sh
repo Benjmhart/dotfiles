@@ -9,7 +9,7 @@ set -o nounset
 main() {
     DATE=`date +%Y-%m-%d`
     echo "cron task started $DATE" > ~/Desktop/cronLog.txt
-    cp ~/Passwords.kdbx ~/secrets
+    #cp ~/Passwords.kdbx ~/secrets
 
     cp -r ~/.config/Code/User/settings.json ~/dotfiles/vscode
     cp -r ~/.config/Code/User/keybindings.json ~/dotfiles/vscode
@@ -20,6 +20,7 @@ main() {
     cp ~/.prettierrc ~/dotfiles
     cp ~/.jsbeautifyrc ~/dotfiles
     cp ~/.hyper.js ~/dotfiles
+    cp ~/.initialize.sh ~/dotfiles
 
     ( cd ~/secrets && git add . && git commit -m $DATE && git push origin master )
 
