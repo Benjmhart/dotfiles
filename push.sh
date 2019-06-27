@@ -20,6 +20,8 @@ main() {
     cp ~/.jsbeautifyrc ~/dotfiles
     cp ~/.hyper.js ~/dotfiles
     cp ~/.initialize.sh ~/dotfiles
+    cp ~/.Xmodmap ~/dotfiles
+    cp ~/.xsession ~/dotfiles
 
     ( cd ~/secrets && git add . && git commit -m $DATE && git push origin master )
 

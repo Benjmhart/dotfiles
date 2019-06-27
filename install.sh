@@ -13,7 +13,9 @@ main() {
     cp ./.hyper.js ~/
     cp ./.gitignore ~/
     cp ./.ghci ~/
-    
+    cp ./.Xmodmap ~/
+    cp ./.xsession ~/
+
     if [[ ! -d ~/bin ]] 
       then
         mkdir ~/bin
