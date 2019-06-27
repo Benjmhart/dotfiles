@@ -14,6 +14,7 @@ main() {
     cp -r ~/.config/Code/User/keybindings.json ~/dotfiles/vscode
     cp ~/.ghci ~/dotfiles
     cp ~/.vimrc ~/dotfiles
+    cp ~/.configure/nvim/init.vim ~/dotfiles
     cp ~/.zshrc ~/dotfiles
     cp ~/streamDeckrc.json ~/dotfiles
     cp ~/.prettierrc ~/dotfiles

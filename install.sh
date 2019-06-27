@@ -8,6 +8,15 @@ main() {
     cp ./.zshrc ~/
     cp ./streamDeckrc.json ~/
     cp ./.vimrc ~/
+    if [[ ! -d ~/.configure ]] 
+      then
+        mkdir ~/.configure
+    fi
+        if [[ ! -d ~/.configure/nvim ]] 
+      then
+        mkdir ~/.configure/nvim
+    fi
+    cp ./init.vim ~/.configure/nvim/
     cp ./.prettierrc ~/
     cp ./.jsbeautifyrc ~/
     cp ./.hyper.js ~/

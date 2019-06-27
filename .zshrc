@@ -1,9 +1,12 @@
 # this lives in ~/.zshrc
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:/$HOME/.local/bin:$HOME/.cabal/config:$HOME/.zshscripts:$HOME/.nvm
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:/$HOME/.local/bin:$HOME/.cabal/config:$HOME/.zshscripts:$HOME/.nvm:/snap/bin:$HOME/.stack
 
+export XDG_CONFIG_HOME=$HOME/.configure
 
-# GOPATH
+export EDITOR=/bin/nvim
+
+#GOPATH
 export GOPATH=~/Projects/go
 
 source "$HOME/.nvm/nvm.sh"
@@ -110,14 +113,14 @@ zle -N expand-aliases
 bindkey '^ ' expand-aliases
 
 # Example aliases
-alias zshrc="sudo gedit ~/.zshrc"
+alias zshrc="sudo nvim ~/.zshrc"
 alias cd..="cd .."
-alias setmon3="/home/bhart/.screenlayout/tripleThreat.sh"
-alias setmon1="/home/bhart/.screenlayout/single.sh"
-alias setmonwide="/home/bhart/.screenlayout/wide.sh"
+alias setmon3="$HOME/.screenlayout/tripleThreat.sh"
+alias setmon1="$HOME/.screenlayout/single.sh"
+alias setmonwide="$HOME/.screenlayout/wide.sh"
 alias projects="cd ~/Projects"
-alias exerbash="cd ~/exercism/bash"
-alias exerhask="cd ~/exercism/haskell"
 alias reload="source ~/.zshrc"
 alias dotfiles="cd ~/dotfiles"
+alias gitchron="git branch --sort=committerdate"
+alias nvimrc="nvim ~/.configure/nvim/init.vim"
 eval $(thefuck --alias)
