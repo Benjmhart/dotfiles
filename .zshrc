@@ -123,4 +123,7 @@ alias reload="source ~/.zshrc"
 alias dotfiles="cd ~/dotfiles"
 alias gitchron="git branch --sort=committerdate"
 alias nvimrc="nvim ~/.configure/nvim/init.vim"
+alias xampp="sudo /opt/lampp/manager-linux-x64.run"
+xmodmap ~/.Xmodmap
+alias capset=xmodmap ~/.Xmodmap
 eval $(thefuck --alias)
