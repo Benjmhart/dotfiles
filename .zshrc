@@ -1,10 +1,16 @@
 # this lives in ~/.zshrc
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:/$HOME/.local/bin:$HOME/.cabal/config:$HOME/.zshscripts:$HOME/.nvm:/snap/bin:$HOME/.stack
+source /etc/profile
+source $HOME/.bash_profile
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:/$HOME/.local/bin:$HOME/.cabal/config:$HOME/.zshscripts:$HOME/.nvm:/snap/bin:$HOME/.stack:$HOME/go/bin
 
 export XDG_CONFIG_HOME=$HOME/.configure
 
 export EDITOR=/bin/nvim
+
+export LANG=C
+export LC_ALL=""
+export LC_COLLATE=C
 
 #GOPATH
 export GOPATH=~/Projects/go
@@ -124,6 +130,5 @@ alias dotfiles="cd ~/dotfiles"
 alias gitchron="git branch --sort=committerdate"
 alias nvimrc="nvim ~/.configure/nvim/init.vim"
 alias xampp="sudo /opt/lampp/manager-linux-x64.run"
-xmodmap ~/.Xmodmap
 alias capset=xmodmap ~/.Xmodmap
 eval $(thefuck --alias)
