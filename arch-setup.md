@@ -141,7 +141,7 @@ useradd -m -g wheel ben
 passwd ben
 
 #step 9 - reboot and log in as user, continued config + installations
-pacman -Syu xorg-server xorg-xinit rxvt-unicode stalonetray xmonad xmonad-contrib xmobar xdotool grep pgrep tmux nm-applet udiskie compton volumeicon pulseaudio noto-fonts gmrun
+pacman -Syu xorg-server xorg-xinit kitty stalonetray xmonad xmonad-contrib xmobar xdotool grep pgrep tmux nm-applet udiskie compton volumeicon pulseaudio noto-fonts gmrun
 cp ~/dotfiles/.xinitrc ~/.xinitrc
 pacman -Syyu stack firefox
 stack install ghcid-0.7.5
@@ -197,8 +197,8 @@ cp ~/dotfiles/.xmonad ~/
 cp ~/dotfiles/.xinit ~/
 cp ~/dotfiles/.xsession ~/
 
-# add urxvt config
-cp ~/dotfiles/.xResources ~/
+# add kitty config
+cp ~/dotfiles/.Xresources ~/
 
 # install fonts
 pacman -Syu ttf-fira-code
@@ -206,11 +206,16 @@ git clone https://github.com/Benjmhart/iosevka-palooza.git
 mkdir  /usr/share/fonts/iosevka-palooza
 fc-cache
 
-#configure git
+# configure git
 git config --global user.name "benjmhart"
 git config --global user.email "benjmhart@gmail.com"
 git config --global core.editor nvim
 git config --global --replace-all core.pager "less -F -X"
+
+# configure nvim
+mkdir ~/.configure/nvim
+cp ~/dotfiles/init.vim ~/.configure/nvim
+
 
 # enable snapd
 yay -S snapd
