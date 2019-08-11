@@ -13,7 +13,7 @@ import System.IO
 main = do
   -- xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmobarrc"
   xmonad $ def 
-    { terminal = "urxvt"
+    { terminal = "kitty"
     } 
  --   { manageHook = manageDocks <+> manageHook def
  --   , layoutHook = avoidStruts $ layoutHook def
