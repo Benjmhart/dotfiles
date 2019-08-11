@@ -129,7 +129,9 @@ cat data.json | curl -H "Content-Type: application/json" -X POST -d @- http://<n
 
 # add the key to github
 
-git clone https://github.com/Benjmhart/dotfiles.git
+git clone git@github.com:Benjmhart/dotfiles.git
+
+# also clone down secrets
 
 # copy .bash_profile and sudoers
 cp ~/dotfiles/.bash_profile ~/.bash_profile
@@ -193,6 +195,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 # add xmonad config 
 cp ~/dotfiles/.xmonad ~/
 cp ~/dotfiles/.xinit ~/
+cp ~/dotfiles/.xsession ~/
 
 # add urxvt config
 cp ~/dotfiles/.xResources ~/
@@ -217,3 +220,6 @@ ln -s /var/lib/snapd/snap /snap
 # install ngrok
 snap install ngrok
 
+
+
+## you should now be able to run startx 
