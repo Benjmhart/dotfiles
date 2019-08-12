@@ -20,6 +20,8 @@ fman
 postgres
 ngrok
 synergy/barrier
+vlc
+
 
 
 clone down current projects

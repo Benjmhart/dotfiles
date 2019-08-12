@@ -152,10 +152,11 @@ sudo apt-get install postgresql postgresql-contrib
 sudo -i -u postgres
 
 # haskell ide engine 
-sudo apt install libicu-dev libtinfo-dev libgmp-dev
-git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules
-cd haskell-ide-engine
-stack ./install.hs help
+stack install ghcid
+# sudo apt install libicu-dev libtinfo-dev libgmp-dev
+# git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules
+# cd haskell-ide-engine
+# stack ./install.hs help
 
 
 #ngrok
