@@ -141,7 +141,7 @@ useradd -m -g wheel ben
 passwd ben
 
 #step 9 - reboot and log in as user, continued config + installations
-pacman -Syu xorg-server xorg-xinit kitty stalonetray xmonad xmonad-contrib xmobar xdotool grep pgrep tmux nm-applet udiskie compton volumeicon pulseaudio noto-fonts gmrun
+pacman -Syu xorg-server xorg-xinit kitty stalonetray xmonad xmonad-contrib xmobar xdotool grep pgrep tmux nm-applet udiskie compton volumeicon pulseaudio noto-fonts gmrun wget
 cp ~/dotfiles/.xinitrc ~/.xinitrc
 pacman -Syyu stack firefox
 stack install ghcid-0.7.5
@@ -198,12 +198,17 @@ cp ~/dotfiles/.xinit ~/
 cp ~/dotfiles/.xsession ~/
 
 # add kitty config
-cp ~/dotfiles/.Xresources ~/
+cp ~/dotfiles/kitty.conf ~/
 
 # install fonts
 pacman -Syu ttf-fira-code
 git clone https://github.com/Benjmhart/iosevka-palooza.git
 mkdir  /usr/share/fonts/iosevka-palooza
+wget https://github.com/be5invis/Iosevka/files/3210460/iosevka-term-nerd-single.zip
+mkdir /usr/share/fonts/iosevka-term
+cp ./iosevka-palooza/ttf/*.* /usr/share/fonts/iosevka-palooza
+cp ./iosevka-term-nerd-single/*.* /usr/share/fonts/iosevka-term
+yay -S otf-hasklig ttf-monoid
 fc-cache
 
 # configure git
@@ -225,6 +230,30 @@ ln -s /var/lib/snapd/snap /snap
 # install ngrok
 snap install ngrok
 
+# firefox extensions
+wget https://addons.mozilla.org/firefox/downloads/file/3027669/ublock_origin-1.20.0-an+fx.xpi
+firefox ublock_origin*.xpi
+rm ublock_*.xpi
+wget https://addons.mozilla.org/firefox/downloads/file/3021433/reddit_enhancement_suite-5.16.10-an+fx.xpi
+firefox reddit_*.xpi
+rm reddit_*.xpi
+wget https://addons.mozilla.org/firefox/downloads/file/1078088/hacker_news_enhancement_suite-1.6.0.1-an+fx.xpi?src=dp-btn-primary<Paste>                   
+firefox hacker_*.xpi
+rm hacker_*.xpi
 
+#automation
+pacman -S inotify-tools entr
+
+#screen management
+pacman -S xorg-xrandr arandr
+
+#cronjob
+crontab -e
+# insert the following */1 * * * * "bash /home/ben/dotfiles/update.sh"
+
+# wine
+# edit /etc/pacman.conf and uncomment [multilib] and the line below
+pacman -Syu
+pacman -S wine
 
 ## you should now be able to run startx 
