@@ -10,6 +10,6 @@ xrdb -merge .Xresources
 # udiskie & 
 # compton &
 # volumeicon & 
-
+xmodmap ~/.Xmodmap
 
 exec xmonad
