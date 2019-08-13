@@ -34,7 +34,7 @@ main() {
     ( cd ~/dotfiles && git add . && git commit -m $DATE && git push origin master )
     
     echo "TASK COMPLETE"
-    [[ -d ~/Desktop ]] && echo "cron task ran successfully $DATE" >> ~/Desktop/cronLog.txt
+    echo "cron task ran successfully $DATE" >> ~/cronLog.txt
 }
 
 main
