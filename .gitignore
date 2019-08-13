@@ -1,0 +1,5 @@
+node_modules
+listener/node-modules
+.xmonad/xmonad-x86_64-linux
+.xmonad/xmonad.hi
+.xmonad/xmonad.o
