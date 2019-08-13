@@ -7,20 +7,24 @@ main() {
     echo "installing dotfiles for standard linux with a desktop environment"
     cp ./.zshrc ~/
     cp ./.bash_profile ~/
-    cp ./xmobarrc ~/
+    cp ./.xmobarrc ~/
     cp ./.Xmodmap ~/
     cp ./streamDeckrc.json ~/
     if [[ ! -d ~/.configure ]] 
       then
         mkdir ~/.configure
     fi
-        if [[ ! -d ~/.config ]] 
+    if [[ ! -d ~/.config ]] 
       then
         mkdir ~/.config
     fi
-    cp -r ./.configure/*.* ~/.configure
-    cp -r ./config/*.* ~/.config
-    cp -r ./.xmonad ~/
+    cp -ra ./.configure/* ~/.configure
+    cp -ra ./.config/* ~/.config
+    if [[ ! -d ~/.xmonad ]]
+      then
+        mkdir ~/.xmonad
+    fi
+    cp -r ./.xmonad/*.* ~/.xmonad
     cp ./.prettierrc ~/
     cp ./.jsbeautifyrc ~/
     cp ./.xsession ~/
@@ -29,8 +33,13 @@ main() {
     cp ./.Xmodmap ~/
     cp ./.xsession ~/
     cp ./.xinitrc ~/
-    cp ./bin/*.* ~/bin
-    cp ./.screenlayout ~/
+    if [[ ! -d ~/bin ]]
+      then 
+        echo "adding bin folder"
+        mkdir ~/bin
+    fi
+    cp -a ./bin/* ~/bin
+    cp -r ./.screenlayout ~/
 
     echo "dotfile installation complete"
 }
