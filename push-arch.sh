@@ -20,7 +20,7 @@ main() {
     cp -r ~/.configure/*.* ~/dotfiles/.configure
     cp -r ~/.xmonad ~/dotfiles
     cp ~/.xinitrc ~/dotfiles
-    cp ~/.xmovar ~/dotfiles
+    cp ~/.xmobar ~/dotfiles
     cp ~/.ghci ~/dotfiles
     cp ~/.zshrc ~/dotfiles
     cp ~/streamDeckrc.json ~/dotfiles
