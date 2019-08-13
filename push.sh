@@ -19,14 +19,11 @@ main() {
     cp -r ~/.config/zathura ~/dotfiles/.config/zathura
     cp -r ~/.configure/*.* ~/dotfiles/.configure
     cp ~/.ghci ~/dotfiles
-    cp ~/.vimrc ~/dotfiles
     cp ~/.configure/nvim/init.vim ~/dotfiles
     cp ~/.zshrc ~/dotfiles
     cp ~/streamDeckrc.json ~/dotfiles
     cp ~/.prettierrc ~/dotfiles
     cp ~/.jsbeautifyrc ~/dotfiles
-    cp ~/.hyper.js ~/dotfiles
-    cp ~/.initialize.sh ~/dotfiles
     cp ~/.Xmodmap ~/dotfiles
     cp ~/.xsession ~/dotfiles
 

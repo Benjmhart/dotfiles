@@ -26,7 +26,6 @@ main() {
     cp ~/streamDeckrc.json ~/dotfiles
     cp ~/.prettierrc ~/dotfiles
     cp ~/.jsbeautifyrc ~/dotfiles
-    cp ~/.hyper.js ~/dotfiles
     cp ~/.Xmodmap ~/dotfiles
     cp ~/.xsession ~/dotfiles
 
