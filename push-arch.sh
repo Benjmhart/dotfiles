@@ -18,6 +18,8 @@ main() {
     cp -r ~/.config/teamviewer ~/dotfiles/.config
     cp -r ~/.config/zathura ~/dotfiles/.config
     cp -r ~/.configure/*.* ~/dotfiles/.configure
+    cp ~/.configure/ranger/*.* ~/dotfiles/.configure/ranger
+    cp ~/.configure/vifm/*.* ~/dotfiles/.configure/vifm
     cp -r ~/.xmonad ~/dotfiles
     cp ~/.xinitrc ~/dotfiles
     cp ~/.xmobarrc ~/dotfiles
