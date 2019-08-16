@@ -1,2 +1,0 @@
-set nocp
-set number
