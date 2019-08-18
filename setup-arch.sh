@@ -189,7 +189,7 @@ curl -L http://install.ohmyz.sh | sh
 chsh -s /bin/zsh
 cp ~/dotfiles/.zshrc ~/.zshrc
 cp ~/dotfiles/.Xmodmap ~/.Xmodmap
-pacman -S thefuck
+pacman -S thefuck network-manager-applet
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # add xmonad config 
