@@ -131,7 +131,7 @@ alias gitchron="git branch --sort=committerdate"
 alias nvimrc="nvim ~/.configure/nvim/init.vim"
 alias xampp="sudo /opt/lampp/manager-linux-x64.run"
 alias capset="xmodmap ~/.Xmodmap"
-alias rg="ranger"
+alias rng="ranger"
 unalias la
 alias la="ls -a"
 eval $(thefuck --alias)

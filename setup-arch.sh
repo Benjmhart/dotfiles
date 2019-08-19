@@ -197,6 +197,8 @@ cp ~/dotfiles/.xmonad ~/
 cp ~/dotfiles/.xinit ~/
 cp ~/dotfiles/.xsession ~/
 
+## you should now be able to run startx 
+
 # add kitty config
 cp ~/dotfiles/kitty.conf ~/
 
@@ -275,6 +277,12 @@ pacman -Syu mesa lib32-mesa xf86-video-ati mesa-vdpau lib32-mesa-vdpau
 # 2) for modern AMD card
 pacman -Syu mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon mesa-vdpau lib32-mesa-vdpau
 
-## you should now be able to run startx 
+# TSC &  Purescript
+npm -g install typescript purescript
 
+pacman -S ripgrep
+yay -S the_silver_searcher
 
+#vim plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
