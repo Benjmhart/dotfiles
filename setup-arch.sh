@@ -193,7 +193,6 @@ createdb hastock
 createuser --interactive   # hastock/hastock
 exit
 psql -d hastock -U hastock
-## TODO needs step-by-step instructions for postgres setup
 
 # copy dotfiles from the install.sh script ()
 # verify dotfiles worked by checking nvim
@@ -211,6 +210,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 cp ~/dotfiles/.xmonad ~/
 cp ~/dotfiles/.xinit ~/
 cp ~/dotfiles/.xsession ~/
+
+## you should now be able to run startx 
 
 # add kitty config
 cp ~/dotfiles/kitty.conf ~/
@@ -301,4 +302,12 @@ xmonad --recompile
 pacman -Syu feh trayer stalonetray
 ## you should now be able to run startx 
 
+# TSC &  Purescript
+npm i -g typescript purescript
 
+pacman -S ripgrep
+yay -S the_silver_searcher
+
+#vim plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
