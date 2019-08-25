@@ -8,6 +8,7 @@ main() {
     cp ./.zshrc ~/
     cp ./.bash_profile ~/
     cp ./.xmobarrc ~/
+    cp ./.stalonetrayrc ~/
     cp ./.Xmodmap ~/
     cp ./streamDeckrc.json ~/
     if [[ ! -d ~/.configure ]] 
