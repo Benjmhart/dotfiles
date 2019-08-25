@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 
 main() {
-    echo "installing dotfiles for standard linux with a desktop environment"
+    echo "installing dotfiles for minimal linux with xmonad"
     cp ./.zshrc ~/
     cp ./.bash_profile ~/
     cp ./.xmobarrc ~/
