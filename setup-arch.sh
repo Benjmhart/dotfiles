@@ -22,16 +22,6 @@ ls /sys/firmware/efi/efivars
 wifi-menu
 # if wifi menu fails to connect you,  tether your phone
 # this may fail because default drivers for wifi radio RTL8821AE are crap,  install one of the below using AUR
-#set up automated AUR package mangagement with yay
-pacman -Syu go
-mkdir ~/go
-mkdir ~/go/src
-mkdir ~/go/bin
-GOPATH=~/go/src
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -i
-cd ..
 
 https://aur.archlinux.org/rtl8812au-dkms-git.git
 https://aur.archlinux.org/rtlwifi_new-dkms.git
@@ -56,7 +46,7 @@ wifi-menu
 timedatectl set-ntp true
 
 # Step 3 - Partition
-fdisk -l
+gdisk -l
 
 # ensure that there are the following partitions
 # boot - with bios_grub flag set - 300MB ext4
@@ -87,7 +77,7 @@ arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Canada/Eastern /etc/localtime
 hwclock --systohc
 pacman -Syyu modemmanager mobile-broadband-provider-info usb_modeswitch dialog
-pacman -Syyu networkmanager nvim git kernel26-headers file abs openssh
+pacman -Syyu networkmanager neovim git file openssh
 systemctl enable NetworkManager.service
 systemctl disable dhcpcd.service
 systemctl enable wpa_supplicant.service
@@ -117,6 +107,21 @@ pacman -Syyu grub
 grub-install /dev/sda # (NOT sda1 - target drive not partition)
 grub-mkconfig -o /boot/grub
 
+# IF DUAL BOOTING with EFI
+# do not use grub, use systemd boot which is included.
+bootctl --path=/boot install
+nvim /boot/loader/loader.conf
+#edit contents to match below:
+# timeout 10
+# default arch
+blkid <root partition ie /dev/sda7>
+nvim /boot/loader/entries/arch.conf
+#edit contents to match below
+# title    ArchLinux
+# linux    /vmlinuz-linux
+# initrd   /initramfs-linux.img
+# options  root=PARTUUID=<the part uuid from the blkid call above> rw
+
 # Step 9 reboot and log in as root, continued config
 
 # set up wifi
@@ -125,7 +130,7 @@ nmtui
 ssh-keygen -t rsa -b 4096 -C "benjmhart@gmail.com"
 # curl the ssh key to some local system  running a listener so you can log it out and paste it to github
 
-cat data.json | curl -H "Content-Type: application/json" -X POST -d @- http://<ngrok or ip>
+cat ~/ssh/id_rsa.pub | curl -H "Content-Type: text/plain" -X POST -d @- http://<ngrok or ip>
 
 # add the key to github
 
@@ -141,7 +146,7 @@ useradd -m -g wheel ben
 passwd ben
 
 #step 9 - reboot and log in as user, continued config + installations
-pacman -Syu xorg-server xorg-xinit kitty stalonetray xmonad xmonad-contrib xmobar xdotool grep pgrep tmux nm-applet udiskie compton volumeicon pulseaudio noto-fonts gmrun wget
+pacman -Syu xorg-server xorg-xinit kitty stalonetray xmonad xmonad-contrib xmobar xdotool grep tmux udiskie compton volumeicon pulseaudio noto-fonts gmrun wget
 cp ~/dotfiles/.xinitrc ~/.xinitrc
 pacman -Syyu stack firefox
 stack install ghcid-0.7.5
@@ -178,6 +183,16 @@ nvm ls-remote | grep lts
 # install and configure postgres
 pacman -Syu postgresql
 
+
+sudo -iu postgres
+initdb -D /var/lib/postgres/data
+exit
+sudo systemctl enable --now postgresql
+sudo -iu postgres
+createdb hastock
+createuser --interactive   # hastock/hastock
+exit
+psql -d hastock -U hastock
 ## TODO needs step-by-step instructions for postgres setup
 
 # copy dotfiles from the install.sh script ()
@@ -275,6 +290,15 @@ pacman -Syu mesa lib32-mesa xf86-video-ati mesa-vdpau lib32-mesa-vdpau
 # 2) for modern AMD card
 pacman -Syu mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon mesa-vdpau lib32-mesa-vdpau
 
+# copy over config
+cd dotfiles
+sh ./installDotfiles-arch.sh
+
+# compile xmonad config
+cd ~/.xmonad
+xmonad --recompile
+
+pacman -Syu feh trayer stalonetray
 ## you should now be able to run startx 
 
 
