@@ -302,6 +302,7 @@ xmonad --recompile
 pacman -Syu feh trayer stalonetray
 ## you should now be able to run startx 
 
+yay -Syu ncurses5-compat-libs
 # TSC &  Purescript
 npm i -g typescript purescript
 
