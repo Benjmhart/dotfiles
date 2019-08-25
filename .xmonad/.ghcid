@@ -1,1 +1,1 @@
---command "ghci xmonad.hs"
+--command "ghci xmonad.hs" --allow-eval

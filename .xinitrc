@@ -1,6 +1,5 @@
 xrdb -merge .Xresources
 
-# trayer --edge top --align right --SetDockType true -expand true --width 10  --transparent false --tint 0x191970 --height 12 &
 
 xsetroot -solid midnightblue
 
@@ -8,8 +7,8 @@ xsetroot -solid midnightblue
 # Set background image with feh
 feh --bg-scale ~/dotfiles/bg/valley.jpg &
 
-screensaver -no-splash &
-stalonetray &
+#screensaver -no-splash &
+#stalonetray &
 nm-applet --sm-disable &
 flameshot &
 cbatticon &

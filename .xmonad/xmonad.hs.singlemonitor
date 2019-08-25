@@ -8,7 +8,6 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Util.EZConfig (additionalKeys)
-import XMonad.Util.SpawnOnce
 import System.IO 
 import XMonad.Layout.IndependentScreens
 
@@ -17,8 +16,8 @@ main = do
   xmonad $ def 
     { terminal = "kitty"
     , manageHook = manageDocks <+> manageHook def
-    , startupHook = myStartupHook
     , layoutHook = avoidStruts $ layoutHook def
+    , workspaces = myWorkSpaces
     , logHook = dynamicLogWithPP xmobarPP 
       { ppOutput = hPutStrLn xmproc
       , ppTitle = xmobarColor "green" "" . shorten 50
@@ -29,17 +28,13 @@ main = do
       [ (( mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
       ]
 
-myStartupHook = do
-  spawnOnce "kitty &"
- --  spawnOnce "exec /usr/bin/trayer --edge top --align center --SetDockType true --expand true --width 10  --transparent false --tint 0x292d3e --height 20 --setPartialStrut true &"
-
 xmobarEscape = concatMap doubleLts
   where 
     doubleLts '<' = "<<"
     doubleLts x = [x]
 
 myWorkSpaces :: [String]
-myWorkSpaces = 
+myWorkSpaces = clickable . map (xmobarEscape) $ 
   ["1:Terms", "2:Web", "3:Slack", "4", "5", "6", "7", "8", "9"]
 
 clickable l = 

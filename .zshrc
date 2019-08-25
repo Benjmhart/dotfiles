@@ -132,6 +132,7 @@ alias nvimrc="nvim ~/.configure/nvim/init.vim"
 alias xampp="sudo /opt/lampp/manager-linux-x64.run"
 alias capset="xmodmap ~/.Xmodmap"
 alias rng="ranger"
+alias singletray="stalonetray --config ~/.stalonetrayrc-single"
 unalias la
 alias la="ls -a"
 eval $(thefuck --alias)

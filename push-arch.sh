@@ -23,6 +23,8 @@ main() {
     cp -r ~/.xmonad ~/dotfiles
     cp ~/.xinitrc ~/dotfiles
     cp ~/.xmobarrc ~/dotfiles
+    cp ~/.stalonetrayrc ~/dotfiles
+    cp ~/.stalonetrayrc-single ~/dotfiles
     cp ~/.ghci ~/dotfiles
     cp ~/.zshrc ~/dotfiles
     cp ~/streamDeckrc.json ~/dotfiles
