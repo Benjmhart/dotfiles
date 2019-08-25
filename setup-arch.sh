@@ -304,7 +304,7 @@ pacman -Syu feh trayer stalonetray
 
 yay -Syu ncurses5-compat-libs
 # TSC &  Purescript
-npm i -g typescript purescript
+npm i -g typescript purescript spago
 
 pacman -S ripgrep flameshot xfce4-power-manager
 yay -S the_silver_searcher
