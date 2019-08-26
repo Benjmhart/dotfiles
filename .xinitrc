@@ -5,10 +5,10 @@ xsetroot -solid midnightblue
 
 
 # Set background image with feh
-feh --bg-scale ~/dotfiles/bg/valley.jpg &
+# feh --bg-scale ~/dotfiles/bg/valley.jpg &
+nitrogen --set-scaled --random ~/dotfiles/bg
 
 #screensaver -no-splash &
-#stalonetray &
 nm-applet --sm-disable &
 flameshot &
 cbatticon &

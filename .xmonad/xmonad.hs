@@ -31,7 +31,7 @@ main = do
 
 myStartupHook = do
   spawnOnce "kitty &"
- --  spawnOnce "exec /usr/bin/trayer --edge top --align center --SetDockType true --expand true --width 10  --transparent false --tint 0x292d3e --height 20 --setPartialStrut true &"
+  spawnOnce "stalonetray --config ~/.stalonetrayrc &"
 
 xmobarEscape = concatMap doubleLts
   where 
