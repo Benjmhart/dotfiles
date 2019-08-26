@@ -22,6 +22,7 @@ main() {
     cp ~/.configure/vifm/*.* ~/dotfiles/.configure/vifm
     cp -r ~/.xmonad ~/dotfiles
     cp ~/.xinitrc ~/dotfiles
+    cp ~/bin/*.* /dotfiles/bin
     cp ~/.xmobarrc ~/dotfiles
     cp ~/.stalonetrayrc ~/dotfiles
     cp ~/.stalonetrayrc-single ~/dotfiles

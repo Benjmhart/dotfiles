@@ -25,6 +25,11 @@ main() {
       then
         mkdir ~/.xmonad
     fi
+    if [[ ! -d ~/bin ]]
+      then
+        mkdir ~/bin
+    fi
+    cp ./bin/*.* ~/bin
     cp -r ./.xmonad/*.* ~/.xmonad
     cp ./.prettierrc ~/
     cp ./.jsbeautifyrc ~/
