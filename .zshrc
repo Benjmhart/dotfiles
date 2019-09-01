@@ -4,6 +4,10 @@ source /etc/profile
 source $HOME/.bash_profile
 export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:/$HOME/.local/bin:$HOME/.cabal/config:$HOME/.zshscripts:$HOME/.nvm:/snap/bin:$HOME/.stack:$HOME/go/bin
 
+autoload -Uz compinit
+compinit
+kitty + complete setup zsh | source /dev/stdin
+
 export XDG_CONFIG_HOME=$HOME/.configure
 
 export EDITOR=/bin/nvim
@@ -23,7 +27,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="kolo"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -135,6 +139,7 @@ alias nvimrc="nvim ~/.configure/nvim/init.vim"
 alias xampp="sudo /opt/lampp/manager-linux-x64.run"
 alias capset="xmodmap ~/.Xmodmap"
 alias rng="ranger"
+alias please='sudo $(fc -ln -1)'
 alias singletray="stalonetray --config ~/.stalonetrayrc-single"
 unalias la
 alias la="ls -a"

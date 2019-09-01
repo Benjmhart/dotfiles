@@ -15,7 +15,7 @@ import XMonad.Layout.IndependentScreens
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmobarrc"
   xmonad $ def 
-    { terminal = "kitty"
+    { terminal = "konsole"
     , manageHook = manageDocks <+> manageHook def
     , startupHook = myStartupHook
     , layoutHook = avoidStruts $ layoutHook def

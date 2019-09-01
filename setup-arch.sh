@@ -312,3 +312,8 @@ yay -S the_silver_searcher
 #vim plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+# set up USB monitor support
+
+http://shikherverma.com/blog/Setting-Up-DisplayLink-USB-Monitor
