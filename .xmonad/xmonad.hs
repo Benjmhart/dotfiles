@@ -26,28 +26,17 @@ main = do
     , handleEventHook = handleEventHook def <+> docksEventHook
     , modMask = mod4Mask -- rebind mod to the windows key
     } `additionalKeys` 
-      [ (( mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
+      [ printscreenFlameshot
+      , modKKeypass
       ]
 
+printscreenFlameshot = ((noModMask, xK_Print), spawn "flameshot gui")
+modKKeypass = ((mod4Mask .|. shiftMask, xK_k), spawn "keepassxc")
+
 myStartupHook = do
-  spawnOnce "kitty &"
+  spawnOnce "konsole &"
   spawnOnce "stalonetray --config ~/.stalonetrayrc &"
 
-xmobarEscape = concatMap doubleLts
-  where 
-    doubleLts '<' = "<<"
-    doubleLts x = [x]
-
-myWorkSpaces :: [String]
-myWorkSpaces = 
-  ["1:Terms", "2:Web", "3:Slack", "4", "5", "6", "7", "8", "9"]
-
-clickable l = 
-  [ "<action=xdotool key alt+" ++ 
-       show (n) ++ ">" ++ ws ++ "</action>" 
-    | (i, ws) <- zip [1..9] l
-    , let n = i ]
 -- wishlist 
--- 2. hotkey for selective screenshot - assign to "flameshot gui"
 -- 3. hotkey for tile screenshot
 -- 4. hotkey to cycle through workspaces
