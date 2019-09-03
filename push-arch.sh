@@ -11,8 +11,7 @@ main() {
 
     cp ~/.config/Code/User/keybindings.json ~/dotfiles/.config/Code/User/keybindings.json
     cp ~/.config/Code/User/settings.json ~/dotfiles/.config/Code/User/settings.json
-    cp -r ~/.config/nvim ~/dotfiles/.config
-    cp -r ~/.config/kitty ~/dotfiles/.config
+    cp -r ~/.configure/nvim ~/dotfiles/.config
     cp -r ~/.config/synergy ~/dotfiles/.config
     cp -r ~/.config/teamviewer ~/dotfiles/.config
     cp -r ~/.config/teamviewer ~/dotfiles/.config
