@@ -39,6 +39,7 @@ main() {
     cp ./.Xmodmap ~/
     cp ./.xsession ~/
     cp ./.xinitrc ~/
+    cp ./.tmux.conf ~/
     if [[ ! -d ~/bin ]]
       then 
         echo "adding bin folder"

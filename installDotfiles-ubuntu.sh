@@ -32,6 +32,7 @@ main() {
     cp ./.ghci ~/
     cp ./.Xmodmap ~/
     cp ./.xsession ~/
+    cp ./.tmux.conf ~/
     if [[ ! -d ~/bin ]]
       then
         mkdir ~/bin
