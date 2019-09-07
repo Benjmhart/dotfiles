@@ -1,8 +1,9 @@
 # this lives in ~/.zshrc
 # If you come from bash you might have to change your $PATH.
 source /etc/profile
-source $HOME/.bash_profile
 export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:/$HOME/.local/bin:$HOME/.cabal/config:$HOME/.zshscripts:$HOME/.nvm:/snap/bin:$HOME/.stack:$HOME/go/bin
+
+export WINHOME=/mnt/c/Users/Ben
 
 autoload -Uz compinit
 compinit
@@ -18,7 +19,7 @@ export LC_COLLATE=C
 #GOPATH
 export GOPATH=~/Projects/go
 
-source "$HOME/.nvm/nvm.sh"
+source "$HOME/.configure/nvm.sh"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -140,6 +141,9 @@ alias capset="xmodmap ~/.Xmodmap"
 alias rng="ranger"
 alias please='sudo $(fc -ln -1)'
 alias singletray="stalonetray --config ~/.stalonetrayrc-single"
+alias tmux="tmux -u"
 unalias la
 alias la="ls -a"
 eval $(thefuck --alias)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
