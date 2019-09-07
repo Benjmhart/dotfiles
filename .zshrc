@@ -6,7 +6,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:
 
 autoload -Uz compinit
 compinit
-kitty + complete setup zsh | source /dev/stdin
 
 export XDG_CONFIG_HOME=$HOME/.configure
 
