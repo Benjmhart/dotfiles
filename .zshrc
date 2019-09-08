@@ -19,7 +19,12 @@ export LC_COLLATE=C
 #GOPATH
 export GOPATH=~/Projects/go
 
-source "$HOME/.configure/nvm.sh"
+if [[ -d "$HOME/.nvm" ]]
+then
+  source "$HOME/.nvm/nvm.sh"
+else
+  source "$HOME/.configure/nvm.sh"
+fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
