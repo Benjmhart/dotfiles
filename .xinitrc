@@ -10,11 +10,11 @@ nitrogen --set-scaled --random ~/dotfiles/bg
 
 #screensaver -no-splash &
 nm-applet --sm-disable &
+picom &
 flameshot &
 cbatticon &
 xfce4-power-manager &
 udiskie & 
-compton &
 volumeicon & 
 xmodmap ~/.Xmodmap
 
