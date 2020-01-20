@@ -1,7 +1,9 @@
 # this lives in ~/.zshrc
 # If you come from bash you might have to change your $PATH.
 source /etc/profile
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:/$HOME/.local/bin:$HOME/.cabal/config:$HOME/.zshscripts:$HOME/.nvm:/snap/bin:$HOME/.stack:$HOME/go/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:/$HOME/.local/bin:$HOME/.cabal/config:$HOME/.zshscripts:$HOME/.nvm:/snap/bin:$HOME/.stack:$HOME/go/bin:$HOME/.cargo/bin
+
+source ~/.nix-profile/etc/profile.d/nix.sh
 
 export WINHOME=/mnt/c/Users/Ben
 
@@ -13,7 +15,7 @@ export XDG_CONFIG_HOME=$HOME/.configure
 export EDITOR=/bin/nvim
 
 export LANG=C
-export LC_ALL=""
+export LC_ALL="en_US.iso88591"
 export LC_COLLATE=C
 
 #GOPATH
@@ -139,6 +141,9 @@ alias startwide="$HOME/bin/startwide.sh"
 alias projects="cd ~/Projects"
 alias reload="source ~/.zshrc"
 alias dotfiles="cd ~/dotfiles"
+alias mongostart="docker run -d -p 27017-27019:27017-27019 --name mongod mongo"
+alias mongod="docker start mongod"
+alias mongo="docker exec -it mongod bash"
 alias gitchron="git branch --sort=committerdate"
 alias nvimrc="nvim ~/.configure/nvim/init.vim"
 alias xampp="sudo /opt/lampp/manager-linux-x64.run"
@@ -149,6 +154,7 @@ alias singletray="stalonetray --config ~/.stalonetrayrc-single"
 alias tmux="tmux -u"
 unalias la
 alias la="ls -a"
+alias vimrc="nvim ~/.configure/nvim/init.vim"
 eval $(thefuck --alias)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
