@@ -14,6 +14,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'purescript-contrib/purescript-vim'
+Plug 'gioele/vim-autoswap'
+Plug 'rhysd/conflict-marker.vim'
 call plug#end()
 
 set updatetime=100
@@ -50,7 +52,7 @@ packadd vimball
 
 
 "edit and refresh vimrc
-:command Vimrc :e $MYVIMRC<Enter>
+:command Vimrc :e $MYVIMRC
 :command Refresh :so $MYVIMRC
 
 " be lazy with the shift key when writing a file or quitting
@@ -105,7 +107,7 @@ set backspace=indent,eol,start
 
 
 " Nerdtree default size and hotkey
-:let g:NERDTreeWinSize=20
+:let g:NERDTreeWinSize=16
 :nmap <leader>n :NERDTree<Enter>
 
 " indentation behaviour 
@@ -135,8 +137,12 @@ endif
 set laststatus=2
 
 " show when a column exceeds 80 char
-:set colorcolumn=80
+:set colorcolumn=81
 :set ruler
+
+" apparently this makes the ruler only show when it gets crossed
+" highlight ColorColumn ctermbg=red
+" call matchadd('ColorColumn', '\%81v', 100)
 
 " utf8 encode
 if &encoding ==# 'latin1' && has('gui_running')
@@ -149,3 +155,12 @@ if !empty(&viminfo)
 endif
 set sessionoptions-=options
 set viewoptions-=options
+
+" insert characters, used for fance comment blocks
+function Repeat()
+  let times = input("Count: ")
+  let char  = input("Char :" )
+  exe ":normal a" . repeat(char, times)
+endfunction
+
+nmap <leader>r :call Repeat()<Enter>
