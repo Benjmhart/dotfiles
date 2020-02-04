@@ -152,6 +152,7 @@ alias rng="ranger"
 alias please='sudo $(fc -ln -1)'
 alias singletray="stalonetray --config ~/.stalonetrayrc-single"
 alias tmux="tmux -u"
+alias clipdelete="clipmenu | clipdel -d --exact-match"
 unalias la
 alias la="ls -a"
 alias vimrc="nvim ~/.configure/nvim/init.vim"
