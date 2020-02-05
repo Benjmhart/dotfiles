@@ -14,9 +14,9 @@ export XDG_CONFIG_HOME=$HOME/.configure
 
 export EDITOR=/bin/nvim
 
-export LANG=C
-export LC_ALL="en_US.iso88591"
-export LC_COLLATE=C
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
 
 #GOPATH
 export GOPATH=~/Projects/go
@@ -34,7 +34,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="kolo"
+ZSH_THEME="lambda" # also see kolo, robbyrussel, miloshadzic, simple
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
