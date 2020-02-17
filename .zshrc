@@ -34,7 +34,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="lambda" # also see kolo, robbyrussel, miloshadzic, simple
+ZSH_THEME="kolo" # also see kolo, robbyrussel, miloshadzic, simple
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -88,7 +88,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast command-not-found compleat npm cabal sudo vscode zsh-syntax-highlighting)
+plugins=(gitfast command-not-found compleat npm cabal sudo vscode zsh-syntax-highlighting vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,6 +128,13 @@ expand-aliases() {
 
 zle -N expand-aliases
 bindkey '^ ' expand-aliases
+
+# vim keybindings
+bindkey -v
+# vim mode switch delay
+export KEYTIMEOUT=1
+# see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode for mapping details
+
 
 # Example aliases
 alias zshrc="sudo nvim ~/.zshrc"
