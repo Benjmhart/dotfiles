@@ -135,9 +135,11 @@ bindkey -v
 export KEYTIMEOUT=1
 # see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode for mapping details
 
+# allow 256 colors in konsole
+export COLORTERM=truecolor
 
 # Example aliases
-alias zshrc="sudo nvim ~/.zshrc"
+alias zshrc="nvim ~/.zshrc"
 alias cd..="cd .."
 alias setmon3="$HOME/.screenlayout/tripleThreat.sh"
 alias setmon1="$HOME/.screenlayout/single.sh"
@@ -162,6 +164,7 @@ alias tmux="tmux -u"
 alias clipdelete="clipmenu | clipdel -d --exact-match"
 unalias la
 alias la="ls -a"
+alias clip="xclip -sel clip"
 alias vimrc="nvim ~/.configure/nvim/init.vim"
 eval $(thefuck --alias)
 
