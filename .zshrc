@@ -15,7 +15,7 @@ export XDG_CONFIG_HOME=$HOME/.configure
 export EDITOR=/bin/nvim
 
 export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
+export LC_ALL="C.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
 
 #GOPATH
