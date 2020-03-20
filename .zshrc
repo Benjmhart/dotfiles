@@ -3,7 +3,6 @@
 source /etc/profile
 export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:/$HOME/.local/bin:$HOME/.cabal/config:$HOME/.zshscripts:$HOME/.nvm:/snap/bin:$HOME/.stack:$HOME/go/bin:$HOME/.cargo/bin
 
-source ~/.nix-profile/etc/profile.d/nix.sh
 
 export WINHOME=/mnt/c/Users/Ben
 
@@ -15,7 +14,7 @@ export XDG_CONFIG_HOME=$HOME/.configure
 export EDITOR=/bin/nvim
 
 export LANG="en_US.UTF-8"
-export LC_ALL="C.UTF-8"
+export LC_ALL="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
 
 #GOPATH
@@ -131,6 +130,14 @@ bindkey '^ ' expand-aliases
 
 # vim keybindings
 bindkey -v
+
+key[Home]=${terminfo[khome]}
+key[End]=${terminfo[kend]}
+[[ -n "${key[Home]}"    ]]  && bindkey  "${key[Home]}"    beginning-of-line
+[[ -n "${key[End]}"     ]]  && bindkey  "${key[End]}"     end-of-line
+[[ -n "${key[Home]}"    ]]  && bindkey -M vicmd "${key[Home]}"    beginning-of-line
+[[ -n "${key[End]}"     ]]  && bindkey -M vicmd "${key[End]}"     end-of-line
+
 # vim mode switch delay
 export KEYTIMEOUT=1
 # see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode for mapping details
@@ -166,6 +173,8 @@ unalias la
 alias la="ls -a"
 alias clip="xclip -sel clip"
 alias vimrc="nvim ~/.configure/nvim/init.vim"
+alias localec="LC_ALL='C'"
+alias localen="LC_ALL='en_US.UTF-8'"
 eval $(thefuck --alias)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
