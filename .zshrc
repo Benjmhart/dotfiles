@@ -24,7 +24,7 @@ if [[ -d "$HOME/.nvm" ]]
 then
   source "$HOME/.nvm/nvm.sh"
 else
-  source "$HOME/.configure/nvm.sh"
+  source "$HOME/.configure/nvm/nvm.sh"
 fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
