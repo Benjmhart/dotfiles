@@ -18,7 +18,7 @@ Plug 'gioele/vim-autoswap'
 Plug 'rhysd/conflict-marker.vim'
 call plug#end()
 " leader is spacebar
-let mapleader = "\ <Space>" 
+let mapleader = " " 
 " leader-w is write/save
 nnoremap <Leader>w :w<CR>
 " reduce wait time when exiting a mode
