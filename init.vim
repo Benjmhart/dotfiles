@@ -1,6 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/vim-easy-align' 
 Plug 'sheerun/vim-polyglot' 
+Plug 'vmchale/dhall-vim'
 " Plug 'HerringtonDarkholme/yats.vim' 
 Plug 'tpope/vim-surround'
 "Plug 'mhartington/nvim-typescript' 
@@ -16,6 +17,12 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'purescript-contrib/purescript-vim'
 Plug 'gioele/vim-autoswap'
 Plug 'rhysd/conflict-marker.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'ap/vim-css-color'
+Plug 'ryanoasis/vim-devicons'
+Plug 'nathanaelkane/vim-indent-guides'
+
 call plug#end()
 " leader is spacebar
 let mapleader = " " 
@@ -23,6 +30,15 @@ let mapleader = " "
 nnoremap <Leader>w :w<CR>
 " reduce wait time when exiting a mode
 set updatetime=100
+
+" adds a horizontal line where the cursor is
+set cursorline
+
+" haskell and vim quick mappings
+" alt-f for forall
+inoremap <M-f> forall 
+inoremap <M-a> Array 
+inoremap <M-T> Tuple 
 
 " toggle comment with // in normal mode
 let g:NERDSpaceDelims = 1
@@ -92,6 +108,9 @@ set backspace=indent,eol,start
 :set listchars+=extends:>
 :set listchars+=precedes:<
 :set listchars+=nbsp:+
+" set color for listchars
+hi CustomWhiteSpace ctermfg=255
+:syntax match CustomWhiteSpace "\s\+"
 
 " allow search highlighting
 :set hls  
