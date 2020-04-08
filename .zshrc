@@ -2,9 +2,9 @@
 # If you come from bash you might have to change your $PATH.
 source /etc/profile
 export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:/usr/bin:/usr/local/bin:${PATH}:/$HOME/.local/bin:$HOME/.cabal/config:$HOME/.zshscripts:$HOME/.nvm:/snap/bin:$HOME/.stack:$HOME/go/bin:$HOME/.cargo/bin
-
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
+if  [ -f /home/ben/.nix-profile/etc/profile.d/nix.sh ] ; then
+  . /home/ben/.nix-profile/etc/profile.d/nix.sh
+fi
 
 export WINHOME=/mnt/c/Users/Ben
 
@@ -12,8 +12,10 @@ autoload -Uz compinit
 compinit
 
 export XDG_CONFIG_HOME=$HOME/.configure
+export XDG_CACHE_HOME=$HOME/.cache
 
 export EDITOR=/bin/nvim
+export BROWSER=/usr/bin/qutebrowser
 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"

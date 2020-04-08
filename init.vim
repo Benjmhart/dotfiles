@@ -22,8 +22,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'farmergreg/vim-lastplace'
 
 call plug#end()
+
+
 " leader is spacebar
 let mapleader = " " 
 " leader-w is write/save
@@ -37,8 +40,10 @@ set cursorline
 " haskell and vim quick mappings
 " alt-f for forall
 inoremap <M-f> forall 
-inoremap <M-a> Array 
-inoremap <M-T> Tuple 
+" alt-r for Array
+inoremap <M-r> Array 
+" alt-t for Tuple
+inoremap <M-t> Tuple 
 
 " toggle comment with // in normal mode
 let g:NERDSpaceDelims = 1
@@ -132,13 +137,17 @@ hi CustomWhiteSpace ctermfg=255
 :set lbr
 
 
-" Nerdtree default size and hotkey
-:let g:NERDTreeWinSize=16
+" Nerdtree default size and hotkey, minimal ui
+:let g:NERDTreeWinSize=18
 :nmap <leader>n :NERDTree<Enter>
+:let NERDTreeMinimalUI = 1
+:let NERDTreeDirArrows = 1
 
 " indentation behaviour 
 :filetype plugin indent on
-:set autoindent
+:set noautoindent
+:set nocindent
+:set nosmartindent
 " On pressing tab, insert 2 spaces
 :set expandtab
 " show existing tab with 2 spaces width
@@ -190,3 +199,4 @@ function Repeat()
 endfunction
 
 nmap <leader>r :call Repeat()<Enter>
+
