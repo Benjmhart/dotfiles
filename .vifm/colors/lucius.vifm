@@ -20,6 +20,7 @@ highlight TopLine cterm=none ctermfg=black ctermbg=240
 highlight TopLineSel cterm=none ctermfg=250 ctermbg=12
 highlight StatusLine cterm=bold ctermfg=255 ctermbg=12
 highlight WildMenu cterm=underline,reverse ctermfg=white ctermbg=black
-highlight CmdLine cterm=none ctermfg=white ctermbg=240
+highlight CmdLine cterm=none ctermfg=cyan ctermbg=240
 highlight ErrorMsg cterm=none ctermfg=250 ctermbg=124
 highlight Border cterm=none ctermfg=236 ctermbg=236
+
